@@ -2,6 +2,7 @@ package io.github.wesleyviricimo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,13 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class VendasApplication {
 
-    @Autowired
-    @Qualifier("applicationName") //Recuperando o valor do método criado na classe de configuração
-    private String annotationName;
+
+    @Value("${application.name}") //Recuperando o valor a partir do arquivo de configuração externalizado application properties
+    private String applicationName;
 
     @GetMapping("/hello")
     public String helloWorld(){
-        return annotationName;
+        return applicationName;
     }
 
     public static void main(String[] args) {
