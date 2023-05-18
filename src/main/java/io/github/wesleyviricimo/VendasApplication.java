@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"io.github.wesleyviricimo.repository","io.github.wesleyviricimo.service" }) //Define quais são as minhas classes de configurações, beans, controllers, repositories e services.
+@ComponentScan(basePackages = {"io.github.wesleyviricimo.repository","io.github.wesleyviricimo.service", "io.github.wesleyviricimo"}) //Define quais são as minhas classes de configurações, beans, controllers, repositories e services.
 @RestController
 public class VendasApplication {
 
